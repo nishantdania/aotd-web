@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import cx from 'classnames';
-import styles from './login.css'; 
+import styles from './forgotPassword.css'; 
 import TransparentButton from '../Buttons/TransparentButton';
 import { Link } from 'react-router-dom';
 import GenericInput from '../Inputs/GenericInput';
 
-class Login extends Component {
+class ForgotPassword extends Component {
 
-  login = () => {
-    console.log('Login clicked !');
+  sendEmail = () => {
+    console.log('Send forgot password email!');
   }
 
   render () {
@@ -17,33 +17,23 @@ class Login extends Component {
         <h1>Art of the day</h1>
       </Link>
       <h2>
-        Welcome back!
+        Forgot your password ?
       </h2>
       <h3>
-        Please login to continue
+        Enter your email and we{`'`}ll send you the reset instructions
       </h3>
       <form>
         <GenericInput 
           label='Email'
           placeholder='artist@email.com'
         />
-      <GenericInput 
-        label='Password'
-        placeholder='********'
-        type='password'
-        linkText='Forgot?'
-        link='/forgotpassword'
-      /> 
       </form>
       <TransparentButton 
-        text='Login' 
-        action={this.login}
+        text='Send instructions' 
+        action={this.sendEmail}
         className={cx(styles['button'])} />
-      <div className={cx(styles['other'])}>
-        Don{`'`}t have an account ? <span><Link to='/signup' >Sign up</Link></span>
-      </div>
     </div>
   }
 }
 
-export default Login;
+export default ForgotPassword;

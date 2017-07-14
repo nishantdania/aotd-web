@@ -4,6 +4,7 @@ import Layout  from './components/Layout';
 import Homepage from './components/Homepage';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import ForgotPassword from './components/ForgotPassword';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Switch>
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Signup} />
+          <Route path='/forgotPassword' component={ForgotPassword} />
           <Route>
             <Layout>
               <Switch>
