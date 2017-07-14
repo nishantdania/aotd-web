@@ -20,7 +20,7 @@ class Navbar extends Component {
         <span className={cx(styles['pipe'])}>|</span>
         <ul>
           <li>
-            Login
+            <Link to='/login'>Login</Link>
           </li>
           <li>
             <TransparentButton text='Sign Up' link='/signup'/>

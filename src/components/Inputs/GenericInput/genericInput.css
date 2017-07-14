@@ -1,0 +1,24 @@
+.outer {
+  padding: 8px 0;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  margin: 4px 0;
+  font-size: 16px;
+  padding: 8px 8px;
+  border: 0 0 1px 0 slateblue;
+  border-radius: 4px;
+  box-shadow: none;
+  border: 1px solid;
+}
+
+.link {
+  font-size: 12px;
+  padding: 0 8px;
+}

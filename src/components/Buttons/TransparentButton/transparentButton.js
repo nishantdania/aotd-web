@@ -6,10 +6,17 @@ import { Link } from 'react-router-dom';
 class TransparentButton extends Component {
 
   render () {
-    const { text, link } = this.props;
-    return <Link to={link} className={cx(styles['button'])}>
-      {text}
-    </Link> 
+    const { text, link, action, className} = this.props;
+    if(link) {
+      return <Link to={link} className={cx(styles['button'], className)}>
+        {text}
+      </Link>
+    }
+    else {
+      return <div onClick={action} className={cx(styles['button'], className)}>
+        {text}
+      </div>
+    }     
   }
 }
 
