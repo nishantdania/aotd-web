@@ -5,6 +5,7 @@ import Homepage from './components/Homepage';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Route path='/login' component={Login} />
           <Route path='/signup' component={Signup} />
           <Route path='/forgotPassword' component={ForgotPassword} />
+          <Route path='/resetPassword' component={ResetPassword} />
           <Route>
             <Layout>
               <Switch>
