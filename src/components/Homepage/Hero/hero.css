@@ -1,0 +1,28 @@
+.outer {
+  margin: 70px 0 0 0;
+}
+
+.upper {
+  margin: 0 0 36px 0;
+}
+
+.upper h1 {
+  font-weight: 700;
+  font-size: 48px;
+  margin: 0 0 16px 0;
+}
+
+.upper h2 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  font-weight: normal;
+}
+
+.or {
+  padding: 0 8px;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
