@@ -1,23 +1,41 @@
 import React, {Component} from 'react';
 import cx from 'classnames';
 import styles from './transparentButton.css'; 
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class TransparentButton extends Component {
 
+  handleKeyPress = (e) => {
+    if(e.which === 13) {
+      const { link, action, history } = this.props;
+      if(action) {
+        action();
+      }
+      else if(link) {
+        history.push(link);
+      }
+    }
+  }
+
   render () {
+
     const { text, link, action, className} = this.props;
+
     if(link) {
-      return <Link to={link} className={cx(styles['button'], className)}>
+      return <Link to={link} tabIndex='0' className={cx(styles['button'], className)}>
         {text}
       </Link>
     }
     else {
-      return <div onClick={action} className={cx(styles['button'], className)}>
-        {text}
+      return <div
+        tabIndex='0'
+        onClick={action}
+        onKeyPress={this.handleKeyPress}
+        className={cx(styles['button'], className)}>
+          {text}
       </div>
     }     
   }
 }
 
-export default TransparentButton;
+export default withRouter(TransparentButton);
