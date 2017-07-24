@@ -6,9 +6,10 @@ var createInstance = () => {
   config = {
     ...config,
     validateStatus: (status) => {
-      return status !== 200;
+      return status === 200;
     },
   };
+console.log('config : ', config);
   var instance = new axios.create(config);
   return instance;
 }
