@@ -32,12 +32,15 @@ class Toast extends Component {
           transitionName={{
             appear: styles['toast-appear'],
             appearActive: styles['toast-appear-active'],
+            enter: styles['toast-appear'],
+            enterActive: styles['toast-appear-active'],
             leave: styles['toast-leave'],
             leaveActive: styles['toast-leave-active']
           }}
           transitionAppear={true}
           transitionAppearTimeout={1000}
-          transitionEnter={false}
+          transitionEnter={true}
+          transitionEnterTimeout={1000}
           transitionLeave={true}
           transitionLeaveTimeout={500}>
             { show ?
