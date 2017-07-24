@@ -6,25 +6,29 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
+import Toast from './components/Toast';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route path='/login' component={Login} />
-          <Route path='/signup' component={Signup} />
-          <Route path='/forgotPassword' component={ForgotPassword} />
-          <Route path='/resetPassword' component={ResetPassword} />
-          <Route>
-            <Layout>
-              <Switch>
-                <Route path='/' component={Homepage} />
-              </Switch>
-            </Layout>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <div>
+        <Toast />
+        <BrowserRouter>
+          <Switch>
+            <Route path='/login' component={Login} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/forgotPassword' component={ForgotPassword} />
+            <Route path='/resetPassword' component={ResetPassword} />
+            <Route>
+              <Layout>
+                <Switch>
+                  <Route path='/' component={Homepage} />
+                </Switch>
+              </Layout>
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </div>
     );
   }
 }
