@@ -7,7 +7,15 @@ class GenericInput extends Component {
 
   render () {
 
-    const { label, placeholder, type, className, link, linkText } = this.props;
+    const { 
+      label,
+      placeholder,
+      type,
+      className,
+      link,
+      linkText,
+      handleChange,
+    } = this.props;
 
     return <div className={cx(styles['outer'], className)}>
       {label ?
@@ -24,6 +32,7 @@ class GenericInput extends Component {
         placeholder={placeholder}
         type={type || 'text'}
         className={cx(styles['input'])} 
+        onChange={ handleChange }
       />
     </div>
   }

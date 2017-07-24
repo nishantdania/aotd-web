@@ -4,11 +4,32 @@ import styles from './signup.css';
 import TransparentButton from '../Buttons/TransparentButton';
 import { Link } from 'react-router-dom';
 import GenericInput from '../Inputs/GenericInput';
+import * as actions from '../../actions/authActions.js';
+import { connect } from 'react-redux';
 
 class Signup extends Component {
 
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+  }
+
   signup = () => {
-    console.log('Signup clicked !');
+    const {signup} = this.props;
+    const {firstName, lastName, email} = this.state;
+    signup({
+      firstName,
+      lastName,
+      email
+    });
+  }
+
+  changeState = (change) => {
+    this.setState(
+      ...this.state,
+      change
+    );
   }
 
   render () {
@@ -25,14 +46,17 @@ class Signup extends Component {
         <GenericInput 
           label='First name'
           placeholder='John'
+          handleChange={(e) => this.changeState({ firstName:  e.target.value })}
         />
         <GenericInput 
           label='Last name'
           placeholder='Snow'
+          handleChange={(e) => this.changeState({ lastName: e.target.value })}
         />
         <GenericInput 
           label='Email'
           placeholder='your@email.com'
+          handleChange={(e) => this.changeState({ email: e.target.value })}
         />
       </form>
       <TransparentButton 
@@ -45,5 +69,10 @@ class Signup extends Component {
     </div>
   }
 }
+
+Signup = connect(
+  null,
+  actions
+)(Signup);
 
 export default Signup;

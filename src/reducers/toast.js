@@ -1,4 +1,4 @@
-import { HIDE_TOAST, SHOW_TOAST } from '../actions/toastActions';
+import { TOAST } from '../actions/constants';
 
 const toast = (state = {
   show: false,
@@ -6,14 +6,14 @@ const toast = (state = {
   timeout: null
 }, action) => {
   switch (action.type) {
-    case SHOW_TOAST:
+    case TOAST.SHOW_TOAST:
       return {
         ...state,
         show: true,
         message: action.data.message || '',
         timeout: action.data.timeout || null
       }
-    case HIDE_TOAST:
+    case TOAST.HIDE_TOAST:
       return {
         ...state,
         show: false,

@@ -1,9 +1,8 @@
-export const HIDE_TOAST = 'HIDE_TOAST';
-export const SHOW_TOAST = 'SHOW_TOAST';
+import { TOAST } from './constants.js';
 
 export const hideToastAction = () => (dispatch) => {
   dispatch({
-    type: HIDE_TOAST
+    type: TOAST.HIDE_TOAST
   });
 }
 
@@ -13,7 +12,7 @@ export const showToastAction = (message, timeout) => (dispatch) => {
     timeout
   };
   dispatch({
-    type: SHOW_TOAST,
+    type: TOAST.SHOW_TOAST,
     data: data
   });
 }
