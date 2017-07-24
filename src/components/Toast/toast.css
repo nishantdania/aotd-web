@@ -7,11 +7,19 @@
 }
 
 .content {
+  display: flex;
+  display: -webkit-flex;
   background: green;
   color: white;
   padding: 12px 24px;
   margin: 8px;
   border-radius: 4px;
+}
+
+.close {
+  justify-content: flex-end;
+  margin: 0 0 0 32px;
+  cursor: pointer;
 }
 
 .toast-appear {

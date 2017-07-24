@@ -23,9 +23,13 @@ class Toast extends Component {
     }
   }
 
+  handleClose = () => {
+    this.props.hideToastAction();
+  }
+
   render () {
 
-    const { show, message } = {...this.props.toast};
+    const { show, message, timeout } = {...this.props.toast};
 
       return (
         <CSSTransitionGroup
@@ -44,11 +48,17 @@ class Toast extends Component {
           transitionLeave={true}
           transitionLeaveTimeout={500}>
             { show ?
-            <div className={cx(styles['outer'])}>
-              <div className={cx(styles['content'])}>
-                {message}
+              <div className={cx(styles['outer'])}>
+                <div className={cx(styles['content'])}>
+                  {message}
+                  { timeout ? null : 
+                    <div onClick={this.handleClose} className={cx(styles['close'])}>
+                      X
+                    </div>
+                  }
+                </div>
+                
               </div>
-            </div>
             : null }
         </CSSTransitionGroup>
       )
