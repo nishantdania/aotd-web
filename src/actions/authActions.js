@@ -29,7 +29,7 @@ export const signup = (data) => (dispatch) => {
     dispatch({
       type: TOAST.SHOW_TOAST,
       data: {
-        message: err.message,
+        message: err.response.data.message,
         timeout: 3000,  
       }
     });
