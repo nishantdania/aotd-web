@@ -4,11 +4,30 @@ import styles from './login.css';
 import TransparentButton from '../Buttons/TransparentButton';
 import { Link } from 'react-router-dom';
 import GenericInput from '../Inputs/GenericInput';
+import * as actions from '../../actions/authActions.js';
+import { connect } from 'react-redux';
 
 class Login extends Component {
 
+  state = {
+    email: '',
+    password: '',
+  }
+
   login = () => {
-    console.log('Login clicked !');
+    const {login} = this.props;
+    const {email, password} = this.state;
+    login({
+      email,
+      password
+    });
+  }
+
+  changeState = (change) => {
+    this.setState(
+      ...this.state,
+      change
+    );
   }
 
   render () {
@@ -26,6 +45,7 @@ class Login extends Component {
         <GenericInput 
           label='Email'
           placeholder='artist@email.com'
+          handleChange={(e) => this.changeState({ email:  e.target.value })}
         />
       <GenericInput 
         label='Password'
@@ -33,6 +53,7 @@ class Login extends Component {
         type='password'
         linkText='Forgot?'
         link='/forgotpassword'
+        handleChange={(e) => this.changeState({ password:  e.target.value })}
       /> 
       </form>
       <TransparentButton 
@@ -45,5 +66,10 @@ class Login extends Component {
     </div>
   }
 }
+
+Login = connect(
+  null,
+  actions
+)(Login);
 
 export default Login;
