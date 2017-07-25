@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import Toast from './components/Toast';
+import VerifyEmail from './components/VerifyEmail';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path='/signup' component={Signup} />
             <Route path='/forgotPassword' component={ForgotPassword} />
             <Route path='/resetPassword' component={ResetPassword} />
+            <Route path='/verify' component={VerifyEmail} />
             <Route>
               <Layout>
                 <Switch>

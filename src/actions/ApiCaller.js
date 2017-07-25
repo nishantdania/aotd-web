@@ -9,7 +9,6 @@ var createInstance = () => {
       return status === 200;
     },
   };
-console.log('config : ', config);
   var instance = new axios.create(config);
   return instance;
 }
