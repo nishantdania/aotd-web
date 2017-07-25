@@ -46,27 +46,53 @@ export const login = (data) => (dispatch) => {
     type: AUTH.LOGIN_REQUEST
   });
 
-  ApiCaller.post(
-    '/login',
-    data
-  )
-  .then((res) => {
-    dispatch({
-      type: AUTH.LOGIN_SUCCESS,
-      data: res.data
+  return new Promise((resolve, reject) => {
+    ApiCaller.post(
+      '/login',
+      data
+    )
+    .then((res) => {
+      localStorage.setItem('token', res.data.token);
+      dispatch({
+        type: AUTH.LOGIN_SUCCESS,
+        data: res.data
+      });
+      resolve();
+    })
+    .catch((err) => {
+      dispatch({
+        type: TOAST.SHOW_TOAST,
+        data: {
+          message: err.response.data.message,
+          timeout: 3000,  
+        }
+      });
+      dispatch({
+        type: AUTH.LOGIN_ERROR,
+        data: err
+      }); 
+      reject(err);
     });
   })
-  .catch((err) => {
-    dispatch({
-      type: TOAST.SHOW_TOAST,
-      data: {
-        message: err.response.data.message,
-        timeout: 3000,  
-      }
+}
+
+export const checkUserState = (data) => (dispatch) => {
+ 
+  return new Promise((resolve, reject) => {
+    ApiCaller.get(
+      '/userState',
+      { params : data }
+    )
+    .then((res) => {
+      dispatch({
+        type: AUTH.CHECK_USER_STATE_SUCCESS,
+        data: res.data
+      });
+      resolve();
+    })
+    .catch((err) => {
+      resolve();
     });
-    dispatch({
-      type: AUTH.LOGIN_ERROR,
-      data: err
-    }); 
-  });
+  }); 
+  
 }

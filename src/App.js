@@ -8,11 +8,14 @@ import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import Toast from './components/Toast';
 import VerifyEmail from './components/VerifyEmail';
+import Profile from './components/Profile';
+import Root from './components/Root';
 
 class App extends Component {
+
   render() {
     return (
-      <div>
+      <Root>
         <Toast />
         <BrowserRouter>
           <Switch>
@@ -24,13 +27,14 @@ class App extends Component {
             <Route>
               <Layout>
                 <Switch>
-                  <Route path='/' component={Homepage} />
+                  <Route exact path='/' component={Homepage} />
+                  <Route exact path='/:username' component={Profile} />
                 </Switch>
               </Layout>
             </Route>
           </Switch>
         </BrowserRouter>
-      </div>
+      </Root>
     );
   }
 }

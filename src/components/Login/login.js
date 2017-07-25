@@ -20,7 +20,12 @@ class Login extends Component {
     login({
       email,
       password
-    });
+    })
+    .then(() => {
+      var origin = window.location.origin;
+      window.location = origin;
+    })
+    .catch()
   }
 
   changeState = (change) => {
