@@ -1,1 +1,1 @@
-export {default} from './profile.js';
+export {default} from './uploadWidget.js';

@@ -1,32 +1,40 @@
-.nav {
+.dropzone {
+  cursor: pointer;
+  background: #f2f2f2;
+  padding: 8px;
+  width: 90%;
+  margin: 16px auto;
+  text-align: center;
+  border: 1px dashed #bbb;
+  color: #9c9c9c;
+  font-size: 16px;
+  max-width: 200px;
+  height: 200px;
   display: flex;
   display: -webkit-flex;
-  height: 60px;
   align-items: center;
-  justify-content: space-between;
 }
 
-.logo {
-  text-decoration: none;
-  color: #000;
+.dropzone span {
+  text-decoration: underline;
 }
 
-.links {
+.preview {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 16px auto;
+  border: 1px dashed #bbb;
   display: flex;
+  display: -webkit-flex;
   align-items: center;
 }
 
-.links li {
-  font-size: 14px;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 12px;
+.actions {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
 }
 
-.links li:hover {
-  
-}
-
-.pipe {
-  padding: 0 24px;  
+.button {
+  margin: 0 16px;
 }

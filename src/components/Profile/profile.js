@@ -4,6 +4,7 @@ import styles from './profile.css';
 import UserDetailsWidget from '../UserDetailsWidget';
 import * as actions from '../../actions/profileActions.js';
 import { connect } from 'react-redux';
+import UploadWidget from '../UploadWidget';
 
 class Profile extends Component {
 
@@ -22,6 +23,7 @@ class Profile extends Component {
 
     return <div>
       <UserDetailsWidget userDetails={userDetails} />
+      <UploadWidget />
     </div> 
   }
 }
