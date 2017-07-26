@@ -1,22 +1,21 @@
-.dropzone {
+.uploadInput {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
   cursor: pointer;
-  background: #f2f2f2;
-  padding: 8px;
-  width: 90%;
-  margin: 16px auto;
-  text-align: center;
-  border: 1px dashed #bbb;
-  color: #9c9c9c;
-  font-size: 16px;
-  max-width: 200px;
-  height: 200px;
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
 }
 
-.dropzone span {
-  text-decoration: underline;
+.uploadButton {
+
+}
+
+.uploadWrapper {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  max-width: 110px;
 }
 
 .preview {
