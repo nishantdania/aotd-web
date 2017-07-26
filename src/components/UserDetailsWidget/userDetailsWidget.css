@@ -1,0 +1,61 @@
+.outer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  margin: 8px 0;
+}
+
+.avatar img {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+}
+
+.name {
+  min-height: 42px;
+  width: 90%;
+  max-width: 300px;
+  margin: 4px 0;
+  font-size: 36px;
+  text-transform: capitalize;
+}
+
+.username {
+  min-height: 20px;
+  width: 90%;
+  max-width: 300px;
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.filled {
+  background: #eee;
+}
+
+.animation {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dfdfdf 30%, #eeeeee 33%);
+}
+
+@keyframes placeHolderShimmer{
+  0%{
+    background-position: -300px 0
+  }
+  100%{
+    background-position: 300px 0
+  }
+}
+
