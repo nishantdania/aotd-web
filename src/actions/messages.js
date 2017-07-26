@@ -5,6 +5,7 @@ const messages = {
   VERIFY_EMAIL_ERROR: 'An error occurred while verifying email',
   VERIFY_EMAIL_SUCCESS: 'Email verified successfully',
   VERIFY_EMAIL_TOKEN_MISSING: 'No verification token found',
+  UPLOAD_SUCCESS: 'Image uploaded successfully',
 }
 
 export default messages;

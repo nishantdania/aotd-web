@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import cx from 'classnames';
 import styles from './uploadWidget.css'; 
 import TransparentButton from '../Buttons/TransparentButton';
+import * as toastActions from '../../actions/toastActions.js';
+import * as profileActions from '../../actions/profileActions.js';
+import { connect } from 'react-redux';
 
 class UploadWidget extends Component {
 
@@ -13,6 +16,18 @@ class UploadWidget extends Component {
     var files = e.target.files;
     if(files.length > 0) {
       var file = files[0];
+      if(!(/\.(jpg|jpeg|png)$/i).test(file.name)) {
+        return this.props.showToastAction(
+          'Only jpeg, jpg and png files allowed',
+          3000
+        );
+      }
+      if(file.size < 10) {
+        return this.props.showToastAction(
+          'Image too small',
+          3000
+        );
+      }
       var preview = window.URL.createObjectURL(file);
       file.preview = preview;
       this.setState({
@@ -25,6 +40,12 @@ class UploadWidget extends Component {
     this.setState({
       file: null
     });
+  }
+
+  uploadFile = () => {
+    const {file} = this.state;
+    const {uploadFile} = this.props;
+    uploadFile(file);    
   }
 
   render () {
@@ -40,6 +61,7 @@ class UploadWidget extends Component {
           <input 
             type='file'
             onChange={this.handleChange}
+            accept='image/jpeg, image/jpg, image/png'
             className={cx(styles['uploadInput'])}
           />
         </div>
@@ -54,6 +76,7 @@ class UploadWidget extends Component {
               className={cx(styles['button'])} />
             <TransparentButton 
               text='Upload'
+              action={this.uploadFile}
               className={cx(styles['button'])} />
           </div>
         </div>
@@ -61,5 +84,11 @@ class UploadWidget extends Component {
     </div> 
   }
 }
+
+UploadWidget = connect(
+  null,
+  { ...toastActions,
+  ...profileActions }
+)(UploadWidget);
 
 export default UploadWidget;
