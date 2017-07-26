@@ -13,15 +13,17 @@ class Signup extends Component {
     firstName: '',
     lastName: '',
     email: '',
+    username: '',
   }
 
   signup = () => {
     const {signup} = this.props;
-    const {firstName, lastName, email} = this.state;
+    const {firstName, lastName, email, username} = this.state;
     signup({
       firstName,
       lastName,
-      email
+      email,
+      username
     });
   }
 
@@ -43,6 +45,11 @@ class Signup extends Component {
       <h3>
       </h3>
       <form>
+        <GenericInput 
+          label='Username'
+          placeholder='johnsnow123'
+          handleChange={(e) => this.changeState({ username:  e.target.value })}
+        />
         <GenericInput 
           label='First name'
           placeholder='John'
