@@ -13,26 +13,11 @@ class Root extends Component {
   }
 
   isLoggedIn = () => {
-
     const { checkUserState } = this.props;
-
-    if (typeof localStorage !== 'undefined') {
-      try {
-        var token = localStorage.getItem('token');
-        if (token) {
-          checkUserState({token:token})
-          .then(() => {
-            this.markLoginCheckTrue();    
-          })
-        } 
-        else {
-          this.markLoginCheckTrue();    
-        }
-      } catch(e) {
-        this.markLoginCheckTrue();    
-        // localStorage is disabled
-      }
-    } 
+    checkUserState()
+    .then(() => {
+      this.markLoginCheckTrue();    
+    })
   }
 
   markLoginCheckTrue = () => {

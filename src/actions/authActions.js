@@ -80,8 +80,7 @@ export const checkUserState = (data) => (dispatch) => {
  
   return new Promise((resolve, reject) => {
     ApiCaller.get(
-      '/userState',
-      { params : data }
+      '/userState'
     )
     .then((res) => {
       dispatch({
