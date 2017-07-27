@@ -19,13 +19,22 @@ class Profile extends Component {
 
   render () {
 
-    const { profile } = this.props;
-    const { userDetails, score } = profile;
+    const { profile, userState, match } = this.props;
+    const { userDetails, score } = profile || {};
+    const username = match.params.username;
+
+    if(!profile.userDetails) {
+      return null;
+    }
 
     return <div>
       <UserDetailsWidget userDetails={userDetails} />
       <UserScoreWidget score={score} />
-      <UploadWidget />
+      <UploadWidget 
+        userState={userState} 
+        profile={profile} 
+        username={username}
+      />
     </div> 
   }
 }
@@ -33,6 +42,7 @@ class Profile extends Component {
 const mapStateToProps = (state) => {
   return {
     profile: state.profile,
+    userState: state.userState,
   };
 };
 
