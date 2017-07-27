@@ -5,9 +5,10 @@ const profile = (state = {
 }, action) => {
   switch (action.type) {
     case PROFILE.FETCH_PROFILE_SUCCESS:
-      const { userDetails } = action.data;
+      const { userDetails, score } = action.data;
       return {
-        userDetails
+        userDetails,
+        score
       }
     default:
       return state;

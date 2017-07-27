@@ -5,6 +5,7 @@ import UserDetailsWidget from '../UserDetailsWidget';
 import * as actions from '../../actions/profileActions.js';
 import { connect } from 'react-redux';
 import UploadWidget from '../UploadWidget';
+import UserScoreWidget from '../UserScoreWidget';
 
 class Profile extends Component {
 
@@ -19,10 +20,11 @@ class Profile extends Component {
   render () {
 
     const { profile } = this.props;
-    const { userDetails } = profile;
+    const { userDetails, score } = profile;
 
     return <div>
       <UserDetailsWidget userDetails={userDetails} />
+      <UserScoreWidget score={score} />
       <UploadWidget />
     </div> 
   }
