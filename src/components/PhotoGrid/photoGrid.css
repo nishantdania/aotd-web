@@ -1,0 +1,24 @@
+.image-list {
+  margin: 50px auto;
+  width: 90%;
+  line-height: 0;
+  column-count: 3;
+  column-gap: 0px;  
+}
+
+.image {
+  padding: 8px;  
+  width: 100% !important;
+  height: auto !important;
+}
+
+.load-more {
+  cursor: pointer;
+  padding: 16px;
+  text-align: center;
+  background: #efefef;
+  border-radius: 4px;
+  max-width: 120px;
+  margin: 8px auto;
+  font-size: 14px;
+}
