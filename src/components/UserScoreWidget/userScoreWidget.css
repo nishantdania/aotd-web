@@ -1,3 +1,7 @@
+.outer {
+  margin: 0 0 36px 0;
+}
+
 .publicScore {
   text-align: center;
   margin: 4px 0;

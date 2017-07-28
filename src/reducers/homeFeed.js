@@ -4,7 +4,7 @@ const homeFeed = (state = {
   images: [],
   hasNextPage: true,
   last: '',
-  limit: 4,
+  limit: 12,
 }, action) => {
   switch (action.type) {
     case HOME_FEED.FETCH_HOME_FEED_SUCCESS:

@@ -4,7 +4,7 @@ const userFeed = (state = {
   images: [],
   nextPage: 1,
   hasNextPage: true,
-  limit: 2,
+  limit: 12,
 }, action) => {
   switch (action.type) {
     case USER_FEED.FETCH_USER_FEED_SUCCESS:

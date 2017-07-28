@@ -30,7 +30,10 @@ class HomeFeedWidget extends Component {
         No art found
       </div>
     }
-    return <div>
+    return <div className={cx(styles['outer'])}>
+      <div className={cx(styles['title'])}>
+        Community feed
+      </div>
       <PhotoGrid 
         images={images}
         isHomeFeed={true}

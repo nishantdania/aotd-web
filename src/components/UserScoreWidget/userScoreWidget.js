@@ -39,7 +39,7 @@ class UserScoreWidget extends Component {
     const { score } = this.props;
     const { xp, level, maxXP, baseXP, boosters } = score || {};
   
-    return <div>
+    return <div className={cx(styles['outer'])}>
       {this.renderPublicData(score)}
       {this.renderPrivateData(score)}
     </div> 
