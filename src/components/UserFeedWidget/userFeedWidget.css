@@ -1,32 +1,24 @@
-.nav {
-  display: flex;
-  display: -webkit-flex;
-  height: 60px;
-  align-items: center;
-  justify-content: space-between;
+.image-list {
+  margin: 50px auto;
+  width: 90%;
+  line-height: 0;
+  column-count: 3;
+  column-gap: 0px;  
 }
 
-.logo {
-  text-decoration: none;
-  color: #000;
+.image {
+  padding: 8px;  
+  width: 100% !important;
+  height: auto !important;
 }
 
-.links {
-  display: flex;
-  align-items: center;
-}
-
-.links li {
-  font-size: 14px;
+.load-more {
   cursor: pointer;
-  display: inline-block;
-  margin: 0 12px;
-}
-
-.links li:hover {
-  
-}
-
-.pipe {
-  padding: 0 24px;  
+  padding: 16px;
+  text-align: center;
+  background: #efefef;
+  border-radius: 4px;
+  max-width: 120px;
+  margin: 8px auto;
+  font-size: 14px;
 }

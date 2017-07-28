@@ -16,3 +16,7 @@ export const AUTH = {
 export const PROFILE = {
   FETCH_PROFILE_SUCCESS: 'FETCH_PROFILE_SUCCESS',
 }
+
+export const USER_FEED = {
+  FETCH_USER_FEED_SUCCESS: 'FETCH_USER_FEED_SUCCESS',
+}

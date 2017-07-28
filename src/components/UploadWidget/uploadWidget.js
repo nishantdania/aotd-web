@@ -13,7 +13,7 @@ class UploadWidget extends Component {
   }
 
   showUploadWidget = () => {
-    const { userState, profile, username } = this.props;
+    const { userState, profile } = this.props;
     const { isLoggedIn, user, isUploadPending } = userState;
     const { userDetails } = profile || {};
     if(!isLoggedIn || !userDetails.username || !isUploadPending) {

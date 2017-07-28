@@ -1,4 +1,4 @@
-import { PROFILE, TOAST} from './constants.js';
+import { PROFILE, TOAST, USER_FEED } from './constants.js';
 import ApiCaller from './ApiCaller';
 import axios from 'axios';
 import messages from './messages.js';
@@ -77,5 +77,22 @@ export const uploadFile = (file) => (dispatch) => {
   .then(uploadFileToUrl)
   .then(postDetailsToApi)
   .catch()
+}
 
+export const fetchUserFeed = (data) => (dispatch) => {
+  
+  ApiCaller.get(
+    '/user/images',
+    {
+      params: data
+    }
+  )
+  .then((res) => {
+    dispatch({
+      type: USER_FEED.FETCH_USER_FEED_SUCCESS,
+      data: res.data
+    });
+  })
+  .catch((err) => {
+  });
 }

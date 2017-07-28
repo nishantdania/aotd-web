@@ -6,6 +6,7 @@ import * as actions from '../../actions/profileActions.js';
 import { connect } from 'react-redux';
 import UploadWidget from '../UploadWidget';
 import UserScoreWidget from '../UserScoreWidget';
+import UserFeedWidget from '../UserFeedWidget';
 
 class Profile extends Component {
 
@@ -21,7 +22,7 @@ class Profile extends Component {
 
     const { profile, userState, match } = this.props;
     const { userDetails, score } = profile || {};
-    const username = match.params.username;
+    const username = match.params.username.substring(1);
 
     if(!profile.userDetails) {
       return null;
@@ -35,6 +36,7 @@ class Profile extends Component {
         profile={profile} 
         username={username}
       />
+      <UserFeedWidget username={username}/>
     </div> 
   }
 }
