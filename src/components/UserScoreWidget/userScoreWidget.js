@@ -21,10 +21,7 @@ class UserScoreWidget extends Component {
           Boosters available : {boosters}
         </span>
         <span className={cx(styles['link'])}>
-          Use Booster
-        </span>
-        <span className={cx(styles['link'])}>
-          Earn Boosters
+          (Earn free boosters)
         </span>
       </div>
       <ProgressBar 

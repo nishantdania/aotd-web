@@ -17,13 +17,19 @@ class ProgressBar extends Component {
       width: curPercent 
     };
 
-    return <div className={cx(styles['outer'])}>
+    return <div className={cx(styles['outer'], {[styles['extra-margin']]: maxXP > xp})}>
         <div className={cx(styles['progress-wrapper'])}>
           <div className={cx(styles['progress-base'])} />
           <div  
             style={maxXPStyle}
             className={cx(styles['progress-max'])}
-          />
+          >
+            {maxXP > xp ? 
+              <div 
+                className={cx(styles['tooltip-top'])}>
+                  Regain XP
+              </div> : null}
+          </div>
           <div className={cx(styles['progress-xp'])} 
             style={curXPStyle}
           >
