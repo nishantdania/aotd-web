@@ -7,3 +7,20 @@
 .publicScore span {
   padding: 0 8px; 
 }
+
+.privateScore {
+  margin: 16px auto;
+}
+
+.boosters {
+  text-align: center;
+  margin: 16px auto;
+  font-size: 14px;
+}
+
+.link {
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 0 8px;
+  cursor: pointer;
+}
