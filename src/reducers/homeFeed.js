@@ -8,11 +8,11 @@ const homeFeed = (state = {
 }, action) => {
   switch (action.type) {
     case HOME_FEED.FETCH_HOME_FEED_SUCCESS:
-      const { images, nextPage, hasNextPage } = action.data;
+      const { images, next, hasNextPage } = action.data;
       return {
         ...state,
         images: [...state.images, ...images],
-        nextPage,
+        last: next,
         hasNextPage
       }
     default:
