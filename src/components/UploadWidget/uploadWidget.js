@@ -12,17 +12,6 @@ class UploadWidget extends Component {
     file: null
   }
 
-  showUploadWidget = () => {
-    const { userState, profile } = this.props;
-    const { isLoggedIn, user, isUploadPending } = userState;
-    const { userDetails } = profile || {};
-    if(!isLoggedIn || !userDetails.username || !isUploadPending) {
-      return false;
-    }
-    var show = userDetails.username === user.username;
-    return show;
-  }
-
   handleChange = (e) => {
     var files = e.target.files;
     if(files.length > 0) {
@@ -94,15 +83,7 @@ class UploadWidget extends Component {
   }
 
   render () {
-
-    if(this.showUploadWidget()) {
-      return this.renderUploadWidget();
-    }
-    else {
-      return null;
-    }
-
- 
+    return this.renderUploadWidget();
   }
 }
 

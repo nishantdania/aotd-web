@@ -30,12 +30,16 @@ class Profile extends Component {
 
     return <div>
       <UserDetailsWidget userDetails={userDetails} />
-      <UserScoreWidget score={score} />
-      <UploadWidget 
-        userState={userState} 
-        profile={profile} 
-        username={username}
-      />
+      {userDetails && userDetails.isLoggedIn ? 
+        <UserScoreWidget score={score} />
+      : null}
+      {userDetails && userDetails.isLoggedIn && userState.isUploadPending ? 
+        <UploadWidget 
+          userState={userState} 
+          profile={profile} 
+          username={username}
+        />
+      : null}
       <UserFeedWidget username={username}/>
     </div> 
   }
