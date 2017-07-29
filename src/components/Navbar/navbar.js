@@ -5,9 +5,37 @@ import TransparentButton from '../Buttons/TransparentButton';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+const SCROLL_STICKY = 0;
+
 class Navbar extends Component {
 
-  render () {
+  state = {
+    sticky: false
+  }
+
+  componentDidMount () {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    var scroll = document.body.scrollTop;
+    if(scroll > SCROLL_STICKY && !this.state.sticky) {
+      this.setState({
+        sticky: true
+      });     
+    }
+    else if(scroll <= SCROLL_STICKY && this.state.sticky) {
+      this.setState({
+        sticky: false 
+      });
+    }
+  }
+
+  renderNavbar = () => {
 
     const { isLoggedIn, user } = this.props.userState;
     const { username } = user || {};
@@ -46,6 +74,18 @@ class Navbar extends Component {
         }
       </div>
     </nav>
+  }
+
+  render () {
+
+    const { sticky } = this.state;
+
+    return <div className={cx(styles['outer'])}>
+      <div className={cx(styles['animate'], {[styles['sticky']]: sticky})}>
+        {this.renderNavbar()}
+      </div>  
+    </div>
+
   }
 }
 
