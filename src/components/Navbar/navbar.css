@@ -9,6 +9,10 @@
 .logo {
   text-decoration: none;
   color: #000;
+  font-weight: bold;
+  border: 4px solid;
+  padding: 4px;
+  margin: 0 0 0 16px;
 }
 
 .links {
