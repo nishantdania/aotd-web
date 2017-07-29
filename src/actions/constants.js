@@ -15,6 +15,7 @@ export const AUTH = {
 
 export const PROFILE = {
   FETCH_PROFILE_SUCCESS: 'FETCH_PROFILE_SUCCESS',
+  BOOST_SCORE_SUCCESS: 'BOOST_SCORE_SUCCESS',
 }
 
 export const USER_FEED = {

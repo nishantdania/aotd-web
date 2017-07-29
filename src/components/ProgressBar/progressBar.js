@@ -6,7 +6,7 @@ class ProgressBar extends Component {
 
   render () {
 
-    const { xp, level, maxXP, baseXP, nextGoal } = this.props;
+    const { xp, level, maxXP, baseXP, nextGoal, boostScore } = this.props;
     var maxPercent = (((maxXP-baseXP)/(nextGoal-baseXP))*100).toString() + '%';
     var curPercent = (((xp-baseXP)/(nextGoal-baseXP))*100).toString() + '%';
     var maxXPStyle = {
@@ -26,6 +26,7 @@ class ProgressBar extends Component {
           >
             {maxXP > xp ? 
               <div 
+                onClick={boostScore}
                 className={cx(styles['tooltip-top'])}>
                   Regain XP
               </div> : null}

@@ -10,6 +10,16 @@ const profile = (state = {
         userDetails,
         score
       }
+    case PROFILE.BOOST_SCORE_SUCCESS:
+      const { xp, boosters } = action.data;
+      return {
+        ...state,
+        score: {
+          ...state.score, 
+          xp,
+          boosters
+        } 
+      }
     default:
       return state;
   }

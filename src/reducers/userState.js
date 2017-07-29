@@ -1,4 +1,4 @@
-import { AUTH } from '../actions/constants';
+import { AUTH, PROFILE } from '../actions/constants';
 
 const userState = (state = {
   isLoggedIn: false,
@@ -21,6 +21,11 @@ const userState = (state = {
         isLoggedIn: false,
         user: {}, 
         isUploadPending: true
+      }
+    case PROFILE.BOOST_SCORE_SUCCESS:
+      return {
+        ...state,
+        isUploadPending: action.data.isUploadPending
       }
     default:
       return state;

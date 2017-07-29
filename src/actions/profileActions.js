@@ -96,3 +96,18 @@ export const fetchUserFeed = (data) => (dispatch) => {
   .catch((err) => {
   });
 }
+
+export const boostScore = () => (dispatch) => {
+  
+  ApiCaller.post(
+    '/user/score/boost'
+  )
+  .then((res) => {
+    dispatch({
+      type: PROFILE.BOOST_SCORE_SUCCESS,
+      data: res.data
+    });
+  })
+  .catch((err) => {
+  });
+}

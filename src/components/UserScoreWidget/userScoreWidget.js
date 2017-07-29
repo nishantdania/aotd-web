@@ -2,8 +2,14 @@ import React, {Component} from 'react';
 import cx from 'classnames';
 import styles from './userScoreWidget.css'; 
 import ProgressBar from '../ProgressBar';
+import * as actions from '../../actions/profileActions.js';
+import { connect } from 'react-redux';
 
 class UserScoreWidget extends Component {
+
+  handleBoostScore = () => {
+    this.props.boostScore();
+  }
 
   renderPublicData = (score) => {
     const { xp, level } = score || {};
@@ -30,6 +36,7 @@ class UserScoreWidget extends Component {
         maxXP={maxXP}
         nextGoal={nextGoal}
         baseXP={baseXP}
+        boostScore={this.handleBoostScore}
       />
     </div>
   }
@@ -45,5 +52,10 @@ class UserScoreWidget extends Component {
     </div> 
   }
 }
+
+UserScoreWidget = connect(
+  null,
+  actions
+)(UserScoreWidget);
 
 export default UserScoreWidget;
