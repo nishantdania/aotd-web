@@ -19,3 +19,9 @@ export const fetchHomeFeed = (data) => (dispatch) => {
   .catch((err) => {
   });
 }
+
+export const clearFeed = () => (dispatch) => {
+  dispatch({
+    type: HOME_FEED.HOME_FEED_CLEAR
+  });
+}

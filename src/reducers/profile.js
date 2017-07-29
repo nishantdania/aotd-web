@@ -20,6 +20,8 @@ const profile = (state = {
           boosters
         } 
       }
+    case PROFILE.PROFILE_CLEAR:
+      return {}
     default:
       return state;
   }

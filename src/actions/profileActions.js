@@ -111,3 +111,9 @@ export const boostScore = () => (dispatch) => {
   .catch((err) => {
   });
 }
+
+export const clearProfile = () => (dispatch) => {
+  dispatch({
+    type: PROFILE.PROFILE_CLEAR
+  });
+}

@@ -11,6 +11,10 @@ class UserFeedWidget extends Component {
     this.loadMore(); 
   }
 
+  componentWillUnmount () {
+    this.props.clearProfile();
+  }
+
   loadMore = () => {
     const { fetchUserFeed, userFeed, username } = this.props;
     const { nextPage, hasNextPage, limit } = userFeed;

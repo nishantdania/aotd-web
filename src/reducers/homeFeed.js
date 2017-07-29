@@ -15,6 +15,13 @@ const homeFeed = (state = {
         last: next,
         hasNextPage
       }
+    case HOME_FEED.HOME_FEED_CLEAR:
+      return {
+        ...state,
+        images: [],
+        last: '',
+        hasNextPage: true
+      }
     default:
       return state;
   }

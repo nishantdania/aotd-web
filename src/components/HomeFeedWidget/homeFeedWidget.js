@@ -11,6 +11,10 @@ class HomeFeedWidget extends Component {
     this.loadMore(); 
   }
 
+  componentWillUnmount () {
+    this.props.clearFeed();
+  }
+
   loadMore = () => {
     const { fetchHomeFeed, homeFeed } = this.props;
     const { last, limit } = homeFeed;

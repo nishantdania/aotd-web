@@ -1,4 +1,4 @@
-import { USER_FEED } from '../actions/constants';
+import { USER_FEED, PROFILE } from '../actions/constants';
 
 const userFeed = (state = {
   images: [],
@@ -14,6 +14,13 @@ const userFeed = (state = {
         images: [...state.images, ...images],
         nextPage,
         hasNextPage
+      }
+    case PROFILE.PROFILE_CLEAR:
+      return {
+        ...state,
+        images: [],
+        nextPage: 1,
+        hasNextPage: true
       }
     default:
       return state;
