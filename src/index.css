@@ -14,7 +14,7 @@ menu, nav, output, ruby, section, summary,
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
 }
 

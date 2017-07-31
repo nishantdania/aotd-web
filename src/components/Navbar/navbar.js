@@ -47,7 +47,9 @@ class Navbar extends Component {
       <div className={cx(styles['links'])}>
         <ul>
           <li>
-            How it works
+            <Link to='/howitworks'>
+              How it works
+            </Link>
           </li>
         </ul>
         <span className={cx(styles['pipe'])}>|</span>

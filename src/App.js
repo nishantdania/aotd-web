@@ -10,6 +10,7 @@ import Toast from './components/Toast';
 import VerifyEmail from './components/VerifyEmail';
 import Profile from './components/Profile';
 import Root from './components/Root';
+import How from './components/How';
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
               <Layout>
                 <Switch>
                   <Route exact path='/' component={Homepage} />
+                  <Route exact path='/howitworks' component={How} />
                   <Route exact path='/:username' component={Profile} />
                 </Switch>
               </Layout>

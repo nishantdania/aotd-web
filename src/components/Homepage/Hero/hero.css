@@ -22,7 +22,8 @@
   padding: 0 8px;
 }
 
-.link {
+.link a {
+  color: black;
   text-decoration: underline;
   cursor: pointer;
 }

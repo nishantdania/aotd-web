@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import cx from 'classnames';
 import styles from './hero.css'; 
 import TransparentButton from '../../Buttons/TransparentButton';
+import { Link } from 'react-router-dom';
 
 class Hero extends Component {
 
@@ -26,7 +27,9 @@ class Hero extends Component {
           or
         </span>
         <span className={cx(styles['link'])}>
-          learn how it works
+          <Link to='/howitworks'>
+            learn how it works
+          </Link>
         </span>
       </div>
     </div>

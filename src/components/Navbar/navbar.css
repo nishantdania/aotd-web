@@ -51,6 +51,11 @@
   
 }
 
+.links li a {
+  text-decoration: none;
+  color: black;
+}
+
 .pipe {
   padding: 0 24px;  
 }

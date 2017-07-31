@@ -1,0 +1,49 @@
+.upper {
+  position: relative;
+  margin: 0 0 36px 0;
+}
+
+.upper h1 {
+  font-weight: 700;
+  font-size: 48px;
+  margin: 0 0 16px 0;
+}
+
+.upper h2 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  font-weight: normal;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+}
+
+.title {
+  margin: 8px auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.content {
+  font-size: 16px;
+}
+
+.content span {
+  font-weight: bold;
+}
+
+.outer section {
+  display: flex;
+  margin: 42px auto;
+  max-width: 800px;  
+}
+
+.right img {
+  max-width: 400px; 
+}
