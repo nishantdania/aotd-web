@@ -117,3 +117,27 @@ export const clearProfile = () => (dispatch) => {
     type: PROFILE.PROFILE_CLEAR
   });
 }
+
+export const changeAvatar = (file) => (dispatch) => {
+  
+  ApiCaller.get(
+    '/profile/presignedAvatar',
+    {
+      params: {
+        filename: file.name
+      }
+    }
+  )
+  .then((res) => {
+    var url = res.data.url;
+    axios.put(url, file)
+    .then()
+    .catch()
+  })
+  .catch((err) => {
+  });
+  dispatch({
+    type: PROFILE.CHANGE_AVATAR_SUCCESS,
+    data: file 
+  });
+}

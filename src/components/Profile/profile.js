@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import UploadWidget from '../UploadWidget';
 import UserScoreWidget from '../UserScoreWidget';
 import UserFeedWidget from '../UserFeedWidget';
+import ProfileSettingsWidget from '../ProfileSettingsWidget';
 
 class Profile extends Component {
 
@@ -29,6 +30,7 @@ class Profile extends Component {
     }
 
     return <div>
+      <ProfileSettingsWidget />
       <UserDetailsWidget userDetails={userDetails} />
       {userDetails && userDetails.isLoggedIn ? 
         <UserScoreWidget score={score} />

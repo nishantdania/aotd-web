@@ -22,6 +22,14 @@ const profile = (state = {
       }
     case PROFILE.PROFILE_CLEAR:
       return {}
+    case PROFILE.CHANGE_AVATAR_SUCCESS:
+      return {
+        ...state,
+        userDetails: {
+          ...state.userDetails,
+          avatarURL: action.data.preview
+        }
+      }
     default:
       return state;
   }
