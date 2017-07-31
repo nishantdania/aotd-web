@@ -20,9 +20,11 @@
 }
 
 .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 42px;
   width: 90%;
-  max-width: 300px;
   margin: 4px 0;
   font-size: 36px;
   text-transform: capitalize;

@@ -63,6 +63,12 @@ export const uploadFile = (file) => (dispatch) => {
     )
     .then(() => {
       dispatch({
+        type: PROFILE.ART_UPLOAD_SUCCESS,
+        data: {
+          url: file.preview
+        } 
+      });
+      dispatch({
         type: TOAST.SHOW_TOAST,
         data: {
           message: messages.UPLOAD_SUCCESS,

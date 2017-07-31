@@ -22,6 +22,11 @@ const userFeed = (state = {
         nextPage: 1,
         hasNextPage: true
       }
+    case PROFILE.ART_UPLOAD_SUCCESS:
+      return {
+        ...state,
+        images: [action.data, ...state.images]
+      }
     default:
       return state;
   }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import cx from 'classnames';
 import styles from './userDetailsWidget.css'; 
+import ProfileSettingsWidget from '../ProfileSettingsWidget';
 
 class UserDetailsWidget extends Component {
 
@@ -17,7 +18,8 @@ class UserDetailsWidget extends Component {
       firstName,
       lastName,
       username,
-      avatarURL
+      avatarURL,
+      isLoggedIn
     } = userDetails || {};
 
     return <div className={cx(styles['outer'])}>
@@ -25,7 +27,12 @@ class UserDetailsWidget extends Component {
         <img alt='avatar' src={avatarURL}/>
       </div>
       <div className={cx(styles['name'])}>
-        {`${firstName} ${lastName}`}
+        <span>
+          {`${firstName} ${lastName}`}
+        </span>
+        {isLoggedIn ? 
+          <ProfileSettingsWidget className={cx(styles['settings'])}/>
+        :null}
       </div>
       <div className={cx(styles['username'])}>
         {`@${username}`}

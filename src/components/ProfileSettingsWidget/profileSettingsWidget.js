@@ -14,13 +14,14 @@ class ProfileSettingsWidget extends Component {
 
   openMenu = () => {
     this.setState({
-      openMenu: true
+      openMenu: !this.state.openMenu 
     });
   }
 
   handleLogout = () => {
     localStorage.removeItem('token');
     window.location = window.location.origin;
+    this.openMenu();
   }
 
   handleAvatarChange = (e) => {
@@ -42,36 +43,41 @@ class ProfileSettingsWidget extends Component {
       var preview = window.URL.createObjectURL(file);
       file.preview = preview;
       this.props.changeAvatar(file);
+      this.openMenu();
     }
   }
 
   render () {
 
     const { openMenu } = this.state;
+    const { className } = this.props;
 
-    return <div className={cx(styles['outer'])}>
-      <TransparentButton 
-        text='...' 
-        action={this.openMenu}
-        className={cx(styles['button'])} />
-      {openMenu ?
+    return <div className={cx(styles['outer'], className)}>
+        <TransparentButton 
+          text='...' 
+          action={this.openMenu}
+          className={cx(styles['button'])} />
+        {openMenu ? 
         <div>
-          <ul className={cx(styles['links'])}>
-            <li>
-              Change avatar
-              <input 
-                type='file'
-                onChange={this.handleAvatarChange}
-                accept='image/jpeg, image/jpg, image/png'
-                className={cx(styles['uploadInput'])}
-              />
-            </li>
-            <li onClick={this.handleLogout} >
-              Logout
-            </li>
-          </ul>
-        </div>
-      : null}
+          <div className={cx(styles['overlay'])} onClick={this.openMenu}/>
+            <div className={cx(styles['links-wrapper'])}>
+              <ul className={cx(styles['links'])}>
+                <li>
+                  Change avatar
+                  <input 
+                    type='file'
+                    onChange={this.handleAvatarChange}
+                    accept='image/jpeg, image/jpg, image/png'
+                    className={cx(styles['uploadInput'])}
+                  />
+                </li>
+                <li onClick={this.handleLogout} >
+                  Logout
+                </li>
+              </ul>
+            </div>
+          </div>
+        : null}
     </div>
   }
 }
