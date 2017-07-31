@@ -31,11 +31,11 @@ class UserFeedWidget extends Component {
     const { images, hasNextPage } = userFeed;
 
     if(images.length === 0) {
-      return <div>
+      return <div className={cx(styles['outer'])}>
         No art found
       </div>
     }
-    return <div>
+    return <div className={cx(styles['outer'])}>
       <PhotoGrid images={images}/>
       {hasNextPage ?
         <div 

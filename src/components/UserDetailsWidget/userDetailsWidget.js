@@ -7,7 +7,9 @@ class UserDetailsWidget extends Component {
 
   renderPlaceholder = () => {
     return <div className={cx(styles['outer'])}>
-      <div className={cx(styles['avatar'], styles['filled'])}></div>
+      <div className={cx(styles['avatar'])}>
+          <img alt='avatar' src='/assets/avatar.svg'/>
+      </div>
       <div className={cx(styles['name'], styles['filled'], styles['animation'])}></div>
       <div className={cx(styles['username'], styles['filled'], styles['animation'])}></div>
     </div>
@@ -24,7 +26,11 @@ class UserDetailsWidget extends Component {
 
     return <div className={cx(styles['outer'])}>
       <div className={cx(styles['avatar'])}>
-        <img alt='avatar' src={avatarURL}/>
+        {avatarURL ? 
+          <img alt='avatar' src={avatarURL}/>
+        :
+          <img alt='avatar' src='/assets/avatar.svg'/>
+        }
       </div>
       <div className={cx(styles['name'])}>
         <span>
