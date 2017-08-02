@@ -15,6 +15,7 @@ class GenericInput extends Component {
       link,
       linkText,
       handleChange,
+      errorMessage,
     } = this.props;
 
     return <div className={cx(styles['outer'], className)}>
@@ -31,9 +32,13 @@ class GenericInput extends Component {
       <input 
         placeholder={placeholder}
         type={type || 'text'}
-        className={cx(styles['input'])} 
+        className={cx(styles['input'], {[styles['errorInput']]: errorMessage})} 
         onChange={ handleChange }
       />
+      <div
+       className={cx(styles['error'], {[styles['showError']]: errorMessage})}>
+        {errorMessage}
+      </div>
     </div>
   }
 }

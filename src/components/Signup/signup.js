@@ -14,17 +14,20 @@ class Signup extends Component {
     lastName: '',
     email: '',
     username: '',
+    invalid: {},    
   }
 
   signup = () => {
     const {signup} = this.props;
     const {firstName, lastName, email, username} = this.state;
-    signup({
-      firstName,
-      lastName,
-      email,
-      username
-    });
+    if(this.validate()) {
+      signup({
+        firstName,
+        lastName,
+        email,
+        username
+      });
+    }
   }
 
   changeState = (change) => {
@@ -34,7 +37,31 @@ class Signup extends Component {
     );
   }
 
+  validate = () => {
+    const {firstName, lastName, email, username} = this.state;
+    var invalid = {};
+    if(firstName.length == 0) {
+      invalid.firstName = 'First name is required';
+    }
+    if(lastName.length == 0) {
+      invalid.lastName = 'Last name is required';
+    }
+    if(username.length == 0) {
+      invalid.username = 'Username is required';
+    }
+    if(email.length == 0) {
+      invalid.email = 'Email is required';
+    }
+    this.setState({
+      invalid: invalid
+    });
+    return Object.keys(invalid).length == 0;
+  }
+
   render () {
+
+    const { invalid } = this.state;
+
     return <div className={cx(styles['outer'])}>
       <Link to='/' className={cx(styles['logo'])} >
         <h1>#aotd</h1>
@@ -49,21 +76,25 @@ class Signup extends Component {
           label='Username'
           placeholder='johnsnow123'
           handleChange={(e) => this.changeState({ username:  e.target.value })}
+          errorMessage={invalid.username}
         />
         <GenericInput 
           label='First name'
           placeholder='John'
           handleChange={(e) => this.changeState({ firstName:  e.target.value })}
+          errorMessage={invalid.firstName}
         />
         <GenericInput 
           label='Last name'
           placeholder='Snow'
           handleChange={(e) => this.changeState({ lastName: e.target.value })}
+          errorMessage={invalid.lastName}
         />
         <GenericInput 
           label='Email'
           placeholder='your@email.com'
           handleChange={(e) => this.changeState({ email: e.target.value })}
+          errorMessage={invalid.email}
         />
       </form>
       <TransparentButton 

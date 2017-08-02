@@ -28,3 +28,21 @@
   font-size: 12px;
   padding: 0 8px;
 }
+
+.error {
+  visibility: hidden;
+  height: 12px;
+  width: 100%;
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: 400;
+  color: #ff7878;
+}
+
+.showError {
+  visibility: visible;
+}
+
+.errorInput {
+  border-color: #ff7878;
+}
