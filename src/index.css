@@ -18,6 +18,16 @@ menu, nav, output, ruby, section, summary,
   box-sizing: border-box;
 }
 
+a {
+  font-weight: 600;
+  color: #555;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {
@@ -26,6 +36,5 @@ article, aside, details, figcaption, figure,
 
 ol, ul {
   list-style: none;
-
 }
 

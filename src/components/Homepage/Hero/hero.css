@@ -1,5 +1,6 @@
 .outer {
-  margin: 70px 0 0 0;
+  margin: 72px auto;
+  width: 90%;
 }
 
 .upper {
@@ -10,20 +11,22 @@
   font-weight: 700;
   font-size: 48px;
   margin: 0 0 16px 0;
+  color: #333;
 }
 
 .upper h2 {
-  font-size: 16px;
+  font-size: 20px;
   margin: 0 0 8px 0;
   font-weight: normal;
+  color: #444;
 }
 
 .or {
   padding: 0 8px;
+  color: #444;
 }
 
 .link a {
-  color: black;
   text-decoration: underline;
   cursor: pointer;
 }

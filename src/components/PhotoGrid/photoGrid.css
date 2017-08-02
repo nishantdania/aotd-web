@@ -46,9 +46,10 @@
   opacity: 0;
   text-decoration: none;
   display: block;
-  transition: opacity 0.1s;
+  transition: opacity 0.3s ease;
 }
 
 .user-details:hover {
   opacity: 1;
+  color: white;
 }
