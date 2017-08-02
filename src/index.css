@@ -28,6 +28,10 @@ a:hover {
   color: #000;
 }
 
+a:focus {
+  outline: 2px solid #ddd;
+  outline-offset: 2px;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {

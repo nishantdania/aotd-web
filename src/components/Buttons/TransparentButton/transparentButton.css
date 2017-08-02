@@ -15,3 +15,8 @@
   color: #000 !important;
   border-color: #000;
 }
+
+.button:focus {
+  outline: 2px solid #ddd;
+  outline-offset: 2px;
+}
