@@ -28,7 +28,7 @@ class How extends Component {
           </div>
         </div>
         <div className={cx(styles['right'])}>
-          <img src='./assets/how1.jpg' />
+          <img alt='how' src='./assets/how1.jpg' />
         </div>
       </section>
       <section>
@@ -41,7 +41,7 @@ class How extends Component {
           </div>
         </div>
         <div className={cx(styles['right'])}>
-          <img src='./assets/how2.jpg' />
+          <img alt='how' src='./assets/how2.jpg' />
         </div>
       </section>
       <section>
@@ -54,7 +54,7 @@ class How extends Component {
           </div>
         </div>
         <div className={cx(styles['right'])}>
-          <img src='./assets/how3.jpg'/>
+          <img alt='how' src='./assets/how3.jpg'/>
         </div>
       </section>
     </div> 

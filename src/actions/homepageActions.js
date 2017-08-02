@@ -1,6 +1,5 @@
 import { HOME_FEED } from './constants.js';
 import ApiCaller from './ApiCaller';
-import axios from 'axios';
 
 export const fetchHomeFeed = (data) => (dispatch) => {
   

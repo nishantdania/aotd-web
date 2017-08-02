@@ -31,13 +31,13 @@ class ResetPassword extends Component {
     this.setState({
       invalid: invalid
     });
-    return Object.keys(invalid).length == 0;
+    return Object.keys(invalid).length === 0;
   }
 
 
   resetPassword = () => {
     const { resetPassword, location } = this.props;
-    const { password, confirmPassword } = this.state;
+    const { password } = this.state;
     const query = qs.parse(location.search);
     const token = query.token;
     

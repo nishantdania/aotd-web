@@ -20,6 +20,7 @@ class PhotoGrid extends Component {
         {images.map((image, index) => 
           <div key={index} className={cx(styles['image-item'])}>
             <img
+              alt=''
               className={cx(styles['image'])} 
               key={index}
               src={image.url}

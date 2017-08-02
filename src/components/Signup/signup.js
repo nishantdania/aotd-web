@@ -40,22 +40,22 @@ class Signup extends Component {
   validate = () => {
     const {firstName, lastName, email, username} = this.state;
     var invalid = {};
-    if(firstName.length == 0) {
+    if(firstName.length === 0) {
       invalid.firstName = 'First name is required';
     }
-    if(lastName.length == 0) {
+    if(lastName.length === 0) {
       invalid.lastName = 'Last name is required';
     }
-    if(username.length == 0) {
+    if(username.length === 0) {
       invalid.username = 'Username is required';
     }
-    if(email.length == 0) {
+    if(email.length === 0) {
       invalid.email = 'Email is required';
     }
     this.setState({
       invalid: invalid
     });
-    return Object.keys(invalid).length == 0;
+    return Object.keys(invalid).length === 0;
   }
 
   render () {

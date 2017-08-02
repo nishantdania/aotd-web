@@ -18,7 +18,7 @@ class UserFeedWidget extends Component {
 
   loadMore = () => {
     const { fetchUserFeed, userFeed, username } = this.props;
-    const { nextPage, hasNextPage, limit } = userFeed;
+    const { nextPage, limit } = userFeed;
     var params = {
       page: nextPage,
       limit: limit,

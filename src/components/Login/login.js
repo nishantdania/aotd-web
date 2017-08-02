@@ -18,7 +18,7 @@ class Login extends Component {
   validate = () => {
     const {email, password} = this.state;
     var invalid = {};
-    if(email.length == 0){
+    if(email.length === 0){
       invalid.email = 'Email is required';
     }
     if(password.length < 8){
@@ -27,7 +27,7 @@ class Login extends Component {
     this.setState({
       invalid: invalid
     });
-    return Object.keys(invalid).length == 0;
+    return Object.keys(invalid).length === 0;
   }
 
   login = () => {

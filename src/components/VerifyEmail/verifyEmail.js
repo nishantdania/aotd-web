@@ -1,6 +1,4 @@
 import {Component} from 'react';
-import cx from 'classnames';
-import styles from './verifyEmail.css'; 
 import qs from 'query-string';
 import * as actions from '../../actions/accountActions.js';
 import * as toastActions from '../../actions/toastActions.js';

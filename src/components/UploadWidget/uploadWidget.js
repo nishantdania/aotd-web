@@ -66,7 +66,7 @@ class UploadWidget extends Component {
       : null}
       {file ?
         <div> 
-          <img src={file.preview} className={cx(styles['preview'])} /> 
+          <img alt='preview' src={file.preview} className={cx(styles['preview'])} /> 
           <div className={cx(styles['actions'])}>
             <TransparentButton 
               text='Change'
