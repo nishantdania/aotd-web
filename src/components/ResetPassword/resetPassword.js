@@ -16,33 +16,52 @@ class ResetPassword extends Component {
   state = {
     password: '',
     confirmPassword: '',
+    invalid: {}
   }
+
+  validate = () => {
+    const { password, confirmPassword } = this.state;
+    var invalid = {};
+    if(password.length < 8){
+      invalid.password = 'Password should be 8 chars or more';
+    }
+    if(confirmPassword !== password){
+      invalid.confirmPassword = 'Passwords don\'t match';
+    }
+    this.setState({
+      invalid: invalid
+    });
+    return Object.keys(invalid).length == 0;
+  }
+
 
   resetPassword = () => {
     const { resetPassword, location } = this.props;
     const { password, confirmPassword } = this.state;
     const query = qs.parse(location.search);
     const token = query.token;
-
-    resetPassword({
-      password,
-      token
-    })
-    .then((res) => {
-        if(res.status === 200) {
-          this.props.showToastAction(
-            messages.RESET_PASSWORD_SUCCESS,
-            3000
-          );
-          this.props.history.push('/login');
-        }
-        else {
-          this.throwError();    
-        }
-    })
-    .catch((err) => {
-      this.throwError();    
-    })
+    
+    if(this.validate()) {
+      resetPassword({
+        password,
+        token
+      })
+      .then((res) => {
+          if(res.status === 200) {
+            this.props.showToastAction(
+              messages.RESET_PASSWORD_SUCCESS,
+              3000
+            );
+            this.props.history.push('/login');
+          }
+          else {
+            this.throwError();    
+          }
+      })
+      .catch((err) => {
+        this.throwError();    
+      })
+    }
   }
 
   throwError = () => {
@@ -61,6 +80,9 @@ class ResetPassword extends Component {
   }
 
   render () {
+
+    const {invalid} = this.state; 
+
     return <div className={cx(styles['outer'])}>
       <Link to='/' className={cx(styles['logo'])} >
         <h1>#aotd</h1>
@@ -74,12 +96,15 @@ class ResetPassword extends Component {
           placeholder='********'
           type='password'
           handleChange={(e) => this.changeState({ password:  e.target.value })}
+          errorMessage={invalid.password}
+          hint='Minimum 8 chars long'
         />
         <GenericInput 
           label='Confirm new password'
           placeholder='********'
           type='password'
           handleChange={(e) => this.changeState({ confirmPassword:  e.target.value })}
+          errorMessage={invalid.confirmPassword}
         />
       </form>
       <TransparentButton 

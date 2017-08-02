@@ -12,20 +12,38 @@ class Login extends Component {
   state = {
     email: '',
     password: '',
+    invalid: {},
+  }
+
+  validate = () => {
+    const {email, password} = this.state;
+    var invalid = {};
+    if(email.length == 0){
+      invalid.email = 'Email is required';
+    }
+    if(password.length < 8){
+      invalid.password = 'Password should be atleast 8 characters long';
+    }
+    this.setState({
+      invalid: invalid
+    });
+    return Object.keys(invalid).length == 0;
   }
 
   login = () => {
     const {login} = this.props;
     const {email, password} = this.state;
-    login({
-      email,
-      password
-    })
-    .then(() => {
-      var origin = window.location.origin;
-      window.location = origin;
-    })
-    .catch()
+    if(this.validate()) {
+      login({
+        email,
+        password
+      })
+      .then(() => {
+        var origin = window.location.origin;
+        window.location = origin;
+      })
+      .catch()
+    }
   }
 
   changeState = (change) => {
@@ -36,6 +54,9 @@ class Login extends Component {
   }
 
   render () {
+
+    const {invalid} = this.state;
+
     return <div className={cx(styles['outer'])}>
       <Link to='/' className={cx(styles['logo'])} >
         <h1>#aotd</h1>
@@ -51,6 +72,7 @@ class Login extends Component {
           label='Email'
           placeholder='artist@email.com'
           handleChange={(e) => this.changeState({ email:  e.target.value })}
+          errorMessage={invalid.email}
         />
       <GenericInput 
         label='Password'
@@ -59,6 +81,7 @@ class Login extends Component {
         linkText='Forgot?'
         link='/forgotpassword'
         handleChange={(e) => this.changeState({ password:  e.target.value })}
+        errorMessage={invalid.password}
       /> 
       </form>
       <TransparentButton 

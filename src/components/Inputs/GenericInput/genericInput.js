@@ -16,12 +16,17 @@ class GenericInput extends Component {
       linkText,
       handleChange,
       errorMessage,
+      hint,
     } = this.props;
 
     return <div className={cx(styles['outer'], className)}>
       {label ?
         <div className={cx(styles['label'])}>
           {label}
+          {hint ? <span className={cx(styles['hint'])}>
+            {`(${hint})`}
+          </span>
+          : null }
           { linkText && link 
             ? <Link to={link} className={cx(styles['link'])}>
                 {linkText}

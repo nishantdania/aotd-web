@@ -46,3 +46,8 @@
 .errorInput {
   border-color: #ff7878;
 }
+
+.hint {
+  margin: 0 8px;
+  font-weight: 400;
+}
