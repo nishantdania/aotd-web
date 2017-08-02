@@ -1,32 +1,4 @@
-.nav {
-  display: flex;
-  display: -webkit-flex;
-  height: 60px;
-  align-items: center;
-  justify-content: space-between;
+.profile {
+  min-height: 500px;
 }
 
-.logo {
-  text-decoration: none;
-  color: #000;
-}
-
-.links {
-  display: flex;
-  align-items: center;
-}
-
-.links li {
-  font-size: 14px;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 12px;
-}
-
-.links li:hover {
-  
-}
-
-.pipe {
-  padding: 0 24px;  
-}

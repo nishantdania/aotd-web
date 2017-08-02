@@ -4,6 +4,7 @@ import styles from './userFeedWidget.css';
 import * as actions from '../../actions/profileActions.js';
 import { connect } from 'react-redux';
 import PhotoGrid from '../PhotoGrid';
+import SolidButton from '../Buttons/SolidButton';
 
 class UserFeedWidget extends Component {
 
@@ -38,10 +39,11 @@ class UserFeedWidget extends Component {
     return <div className={cx(styles['outer'])}>
       <PhotoGrid images={images}/>
       {hasNextPage ?
-        <div 
-          className={cx(styles['load-more'])}
-          onClick={this.loadMore}>
-            Load more
+        <div className={cx(styles['load-more'])}>
+          <SolidButton 
+            text='Load more'
+            action={this.loadMore}>
+          </SolidButton>
         </div>
       : null}
     </div>

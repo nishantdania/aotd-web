@@ -17,12 +17,7 @@
 }
 
 .load-more {
-  cursor: pointer;
-  padding: 16px;
-  text-align: center;
-  background: #efefef;
-  border-radius: 4px;
-  max-width: 120px;
-  margin: 8px auto;
-  font-size: 14px;
+  margin: 16px auto;
+  display: flex;
+  justify-content: center;
 }

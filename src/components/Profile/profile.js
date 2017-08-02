@@ -25,10 +25,10 @@ class Profile extends Component {
     const username = match.params.username.substring(1);
 
     if(!profile.userDetails) {
-      return null;
+      return <div className={cx(styles['profile'])} />;
     }
 
-    return <div>
+    return <div className={cx(styles['profile'])}>
       <UserDetailsWidget userDetails={userDetails} />
       {userDetails && userDetails.isLoggedIn && userState.isUploadPending ? 
         <UploadWidget 

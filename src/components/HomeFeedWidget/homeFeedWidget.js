@@ -4,6 +4,7 @@ import styles from './homeFeedWidget.css';
 import * as actions from '../../actions/homepageActions.js';
 import { connect } from 'react-redux';
 import PhotoGrid from '../PhotoGrid';
+import SolidButton from '../Buttons/SolidButton';
 
 class HomeFeedWidget extends Component {
 
@@ -30,7 +31,7 @@ class HomeFeedWidget extends Component {
     const { images, hasNextPage } = homeFeed;
 
     if(images.length === 0) {
-      return <div>
+      return <div className={cx(styles['outer'])} >
         No art found
       </div>
     }
@@ -43,10 +44,11 @@ class HomeFeedWidget extends Component {
         isHomeFeed={true}
       />
       {hasNextPage ?
-        <div 
-          className={cx(styles['load-more'])}
-          onClick={this.loadMore}>
-            Load more
+        <div className={cx(styles['load-more'])}>
+          <SolidButton 
+            text='Load more'
+            action={this.loadMore}>
+          </SolidButton>
         </div>
       : null}
     </div>

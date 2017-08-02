@@ -1,0 +1,16 @@
+.button {
+  text-decoration: none;
+  color: #888 !important;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+  background: #ededed;
+}
+
+.button:hover {
+  background: #ddd;
+}
