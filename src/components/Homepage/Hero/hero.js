@@ -3,10 +3,11 @@ import cx from 'classnames';
 import styles from './hero.css'; 
 import TransparentButton from '../../Buttons/TransparentButton';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Hero extends Component {
 
-  render () {
+  renderGeneric = () => {
     return <div className={cx(styles['outer'])}> 
       <div className={cx(styles['upper'])}>
         <h1>
@@ -34,6 +35,45 @@ class Hero extends Component {
       </div>
     </div>
   }
+
+  renderSpecific = () => {
+    const { userState } = this.props;
+    const { user } = userState;
+    const { firstName, username } = user;
+
+    return <div className={cx(styles['outer'])}> 
+      <div className={cx(styles['upper'])}>
+        <h1>
+          Welcome back {firstName}!
+        </h1>
+      </div>
+      <div>
+        <span>
+          <TransparentButton text='Visit Profile' link={`/@${username}`}/>
+        </span>
+      </div>
+    </div>
+  }
+
+  render () {
+  
+    const { userState } = this.props;
+    const { isLoggedIn } = userState;
+    
+    return isLoggedIn ? this.renderSpecific() : this.renderGeneric()
+  }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    userState: state.userState,
+  };
+};
+
+Hero = connect(
+  mapStateToProps,
+  null
+)(Hero);
+
 
 export default Hero;
