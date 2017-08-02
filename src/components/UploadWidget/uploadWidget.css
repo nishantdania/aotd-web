@@ -1,3 +1,10 @@
+.container {
+  margin: 36px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .uploadInput {
   font-size: 100px;
   position: absolute;
@@ -14,8 +21,6 @@
 .uploadWrapper {
   position: relative;
   overflow: hidden;
-  margin: auto;
-  max-width: 110px;
 }
 
 .preview {

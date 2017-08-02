@@ -50,11 +50,11 @@ class UploadWidget extends Component {
 
   renderUploadWidget = () => {
     const {file} = this.state;
-    return <div>
+    return <div className={cx(styles['container'])}>
       {!file ?
         <div className={cx(styles['uploadWrapper'])}>
           <TransparentButton 
-            text='Upload art'
+            text='Submit art of the day'
             className={cx(styles['uploadButton'])} />
           <input 
             type='file'

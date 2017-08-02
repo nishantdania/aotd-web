@@ -1,4 +1,5 @@
 .progress-wrapper {
+  color: #888;
   width: 100%;
   position: relative;
   max-width: 400px;
@@ -47,14 +48,14 @@
 .next-level-title {
   font-size: 12px;
   padding: 0 16px;
-  color: #cacaca;
   font-weight: bold;
+  color: #888;
 }
 
 .next-level-xp {
   font-size: 12px;
   padding: 0 16px;
-  color: #cacaca;
+  color: #888;
 }
 
 .tooltip {
@@ -110,5 +111,5 @@
 }
 
 .extra-margin {
-  margin-top: 48px;
+  margin-top: 60px;
 }

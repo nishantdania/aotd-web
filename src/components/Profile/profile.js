@@ -30,7 +30,6 @@ class Profile extends Component {
 
     return <div>
       <UserDetailsWidget userDetails={userDetails} />
-      <UserScoreWidget isLoggedIn={userDetails.isLoggedIn} score={score} />
       {userDetails && userDetails.isLoggedIn && userState.isUploadPending ? 
         <UploadWidget 
           userState={userState} 
@@ -38,6 +37,7 @@ class Profile extends Component {
           username={username}
         />
       : null}
+      <UserScoreWidget isLoggedIn={userDetails.isLoggedIn} score={score} />
       <UserFeedWidget username={username}/>
     </div> 
   }
