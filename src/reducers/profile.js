@@ -30,6 +30,11 @@ const profile = (state = {
           avatarURL: action.data.preview
         }
       }
+    case PROFILE.ART_UPLOAD_SUCCESS:
+      return {
+        ...state,
+        score: action.data.score
+      }
     default:
       return state;
   }

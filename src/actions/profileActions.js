@@ -61,11 +61,12 @@ export const uploadFile = (file) => (dispatch) => {
       '/image',
       data 
     )
-    .then(() => {
+    .then((res) => {
       dispatch({
         type: PROFILE.ART_UPLOAD_SUCCESS,
         data: {
-          url: file.preview
+          url: file.preview,
+          score: res.data.score
         } 
       });
       dispatch({

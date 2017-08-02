@@ -27,6 +27,11 @@ const userState = (state = {
         ...state,
         isUploadPending: action.data.isUploadPending
       }
+    case PROFILE.ART_UPLOAD_SUCCESS:
+      return {
+        ...state,
+        isUploadPending: false
+      }
     default:
       return state;
   }
