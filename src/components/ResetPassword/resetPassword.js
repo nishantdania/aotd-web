@@ -63,7 +63,7 @@ class ResetPassword extends Component {
   render () {
     return <div className={cx(styles['outer'])}>
       <Link to='/' className={cx(styles['logo'])} >
-        <h1>Art of the day</h1>
+        <h1>#aotd</h1>
       </Link>
       <h2>
         Enter new password
