@@ -7,13 +7,6 @@ import { hideToastAction, showToastAction } from '../../actions/toastActions.js'
 
 class Toast extends Component {
 
-  componentWillMount () {
-    this.props.showToastAction(
-      'Welcome to Art of the day !',
-      3000
-    ); 
-  }
-
   componentWillReceiveProps (nextProps) {
     const { timeout } = {...nextProps.toast};
     if(timeout && this.props.toast.timeout === null) {
