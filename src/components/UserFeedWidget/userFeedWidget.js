@@ -12,6 +12,14 @@ class UserFeedWidget extends Component {
     this.loadMore(); 
   }
 
+  componentWillUpdate (nextProps) {
+    var old = this.props.username;
+    var current = nextProps.username;
+    if(old !== current) {
+      this.props.clearProfile();
+    }
+  }
+
   componentWillUnmount () {
     this.props.clearProfile();
   }

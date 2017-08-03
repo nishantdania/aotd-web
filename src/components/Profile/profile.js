@@ -11,10 +11,24 @@ import UserFeedWidget from '../UserFeedWidget';
 class Profile extends Component {
 
   componentDidMount () {
+console.log('mount');
     var username = this.props.match.params.username;
     if(username.substring(0, 1) === '@') {
       username = username.substring(1);
       this.props.fetchProfile({username});
+    }
+  }
+
+  componentWillUpdate (nextProps) {
+    console.log('update');
+    var username = nextProps.match.params.username;
+    if(username.substring(0, 1) === '@') {
+      username = username.substring(1);
+      var oldUsername = this.props.match.params.username.substring(1);
+      if(oldUsername !== username) {
+        this.props.fetchProfile({username});
+      }
+      console.log('old vs new : ', this.props.match.params.username + ' ' + username);
     }
   }
 
