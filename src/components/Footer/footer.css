@@ -27,6 +27,7 @@
   font-size: 14px;
   color: #444;
   padding: 8px;
+  line-height: 24px;
 }
 
 .suggestion-link {
@@ -36,4 +37,10 @@
 
 .outer a {
   display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+  .outer {
+    padding: 8px;
+  }
 }
