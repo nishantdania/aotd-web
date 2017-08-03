@@ -56,6 +56,7 @@ class Login extends Component {
   render () {
 
     const {invalid} = this.state;
+    const {status} = this.props;
 
     return <div className={cx(styles['outer'])}>
       <Link to='/' className={cx(styles['logo'])} >
@@ -87,6 +88,7 @@ class Login extends Component {
       <TransparentButton 
         text='Login' 
         action={this.login}
+        status={status}
         className={cx(styles['button'])} />
       <div className={cx(styles['other'])}>
         Don{`'`}t have an account ? <span><Link to='/signup' >Sign up</Link></span>
@@ -95,8 +97,14 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    status: state.status.login
+  };
+};
+
 Login = connect(
-  null,
+  mapStateToProps,
   actions
 )(Login);
 

@@ -2,12 +2,16 @@ import React, {Component} from 'react';
 import cx from 'classnames';
 import styles from './transparentButton.css'; 
 import { Link, withRouter } from 'react-router-dom';
+import { isLoading } from '../../../utils/asyncStatusHelper.js';
 
 class TransparentButton extends Component {
 
   handleKeyPress = (e) => {
+    const { link, action, status, history } = this.props;
+    if(isLoading(status)) {
+      return;
+    }
     if(e.which === 13) {
-      const { link, action, history } = this.props;
       if(action) {
         action();
       }
@@ -17,9 +21,17 @@ class TransparentButton extends Component {
     }
   }
 
+  handleClick = () => {
+    const { status, action } = this.props;
+    if(isLoading(status)) {
+      return;
+    }
+    action();
+  }
+
   render () {
 
-    const { text, link, action, className} = this.props;
+    const { text, link, action, className, status } = this.props;
 
     if(link) {
       return <Link to={link} tabIndex='0' className={cx(styles['button'], className)}>
@@ -29,10 +41,14 @@ class TransparentButton extends Component {
     else {
       return <div
         tabIndex='0'
-        onClick={action}
+        onClick={this.handleClick}
         onKeyPress={this.handleKeyPress}
-        className={cx(styles['button'], className)}>
-          {text}
+        className={cx(styles['button'], className, {[styles['loading']]: isLoading(status)})}>
+          {isLoading(status) 
+          ? 
+            <img alt='' src='/assets/spinner.svg'/>
+          : 
+          text }
       </div>
     }     
   }

@@ -4,6 +4,7 @@ import userState from './userState';
 import profile from './profile';
 import userFeed from './userFeed';
 import homeFeed from './homeFeed';
+import status from './status';
 
 const aotd = combineReducers({
   userState,
@@ -11,6 +12,7 @@ const aotd = combineReducers({
   profile,
   userFeed,
   homeFeed,
+  status,
 });
 
 export default aotd;

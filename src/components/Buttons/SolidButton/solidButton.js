@@ -19,7 +19,8 @@ class SolidButton extends Component {
 
   render () {
 
-    const { text, link, action, className} = this.props;
+    const { text, link, action, className, asyncStatus } = this.props;
+
 
     if(link) {
       return <Link to={link} tabIndex='0' className={cx(styles['button'], className)}>
