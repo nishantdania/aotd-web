@@ -7,6 +7,7 @@ const messages = {
   VERIFY_EMAIL_TOKEN_MISSING: 'No verification token found',
   UPLOAD_SUCCESS: 'Image uploaded successfully',
   FORGOT_PASSWORD_EMAIL_SENT: 'Please check your email for further instructions',
+  VERIFICATION_EMAIL_SENT: 'Please check your email to verify account',
 }
 
 export default messages;

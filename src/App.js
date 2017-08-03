@@ -11,6 +11,7 @@ import VerifyEmail from './components/VerifyEmail';
 import Profile from './components/Profile';
 import Root from './components/Root';
 import How from './components/How';
+import ResendVerify from './components/ResendVerify';
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path='/forgotPassword' component={ForgotPassword} />
             <Route path='/resetPassword' component={ResetPassword} />
             <Route path='/verify' component={VerifyEmail} />
+            <Route path='/resendVerify' component={ResendVerify} />
             <Route>
               <Layout>
                 <Switch>

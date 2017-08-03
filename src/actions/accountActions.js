@@ -32,3 +32,19 @@ export const resetPasswordRequest = (data) => (dispatch) => {
   );
 }
 
+export const resendVerifyRequest = (data) => (dispatch) => {
+
+  dispatch({
+    type: TOAST.SHOW_TOAST,
+    data: {
+      message: messages.VERIFICATION_EMAIL_SENT,
+      timeout: 3000,  
+    }
+  });
+
+  ApiCaller.post(
+    '/verifyRequest',
+    data
+  );
+}
+

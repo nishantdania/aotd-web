@@ -106,6 +106,9 @@ class Signup extends Component {
       <div className={cx(styles['other'])}>
         Already have an account ? <span><Link to='/login' >Login</Link></span>
       </div>
+      <div className={cx(styles['other'])}>
+        Lost/expired verification email ? <span><Link to='/resendVerify' >Resend</Link></span>
+      </div>
     </div>
   }
 }

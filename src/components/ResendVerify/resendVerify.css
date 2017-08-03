@@ -25,7 +25,7 @@
 }
 
 .outer h3 {
-  padding: 4px 0 0px 0;
+  padding: 4px 0 16px 0;
   font-weight: 500;
   font-size: 16px;
 }
@@ -42,7 +42,6 @@
 .other{
   font-size: 12px;
   font-weight: 400;
-  margin: 4px auto;
 }
 
 .other span {
