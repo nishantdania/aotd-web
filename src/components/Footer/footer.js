@@ -10,7 +10,7 @@ class Footer extends Component {
         Got any suggestions to make this service better ? &nbsp; 
         <a href='mailto:hello@aotd.co' target='_blank' rel="noopener noreferrer">
           <span className={cx(styles['suggestion-link'])}>
-            shoot an email to hello@aotd.co 
+            Shoot an email to hello@aotd.co 
           </span>
         </a>
       </div>

@@ -12,6 +12,7 @@ import Profile from './components/Profile';
 import Root from './components/Root';
 import How from './components/How';
 import ResendVerify from './components/ResendVerify';
+import ScrollToTop from './components/ScrollToTop';
 
 class App extends Component {
 
@@ -20,23 +21,25 @@ class App extends Component {
       <Root>
         <Toast />
         <BrowserRouter>
-          <Switch>
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
-            <Route path='/forgotPassword' component={ForgotPassword} />
-            <Route path='/resetPassword' component={ResetPassword} />
-            <Route path='/verify' component={VerifyEmail} />
-            <Route path='/resendVerify' component={ResendVerify} />
-            <Route>
-              <Layout>
-                <Switch>
-                  <Route exact path='/' component={Homepage} />
-                  <Route exact path='/howitworks' component={How} />
-                  <Route exact path='/:username' component={Profile} />
-                </Switch>
-              </Layout>
-            </Route>
-          </Switch>
+          <ScrollToTop>
+            <Switch>
+              <Route path='/login' component={Login} />
+              <Route path='/signup' component={Signup} />
+              <Route path='/forgotPassword' component={ForgotPassword} />
+              <Route path='/resetPassword' component={ResetPassword} />
+              <Route path='/verify' component={VerifyEmail} />
+              <Route path='/resendVerify' component={ResendVerify} />
+              <Route>
+                <Layout>
+                  <Switch>
+                    <Route exact path='/' component={Homepage} />
+                    <Route exact path='/howitworks' component={How} />
+                    <Route exact path='/:username' component={Profile} />
+                  </Switch>
+                </Layout>
+              </Route>
+            </Switch>
+          </ScrollToTop>
         </BrowserRouter>
       </Root>
     );

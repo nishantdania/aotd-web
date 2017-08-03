@@ -53,3 +53,18 @@
 .right img {
   max-width: 500px; 
 }
+
+@media only screen and (max-width: 767px) {
+  .outer section {
+    display: block;
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
+  .right img {
+    max-width: 100%;
+  }
+}
