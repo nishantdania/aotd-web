@@ -19,7 +19,7 @@ class SolidButton extends Component {
 
   render () {
 
-    const { text, link, action, className, asyncStatus } = this.props;
+    const { text, link, action, className } = this.props;
 
 
     if(link) {

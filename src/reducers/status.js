@@ -1,5 +1,5 @@
 import { AUTH } from '../actions/constants';
-import {SUCCESS, LOADING, ERROR, INIT} from '../utils/asyncStatusHelper';
+import {LOADING, INIT} from '../utils/asyncStatusHelper';
 
 const status = (state = {
   signup: { asyncStatus: INIT },

@@ -31,7 +31,7 @@ class TransparentButton extends Component {
 
   render () {
 
-    const { text, link, action, className, status } = this.props;
+    const { text, link, className, status } = this.props;
 
     if(link) {
       return <Link to={link} tabIndex='0' className={cx(styles['button'], className)}>
