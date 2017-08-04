@@ -24,7 +24,7 @@ class How extends Component {
             Draw everyday
           </div>
           <div className={cx(styles['content'])}>
-            Draw one thing everyday and upoad to gain points. As you move forward in the levels, <span>you will gain badges like Bronze, Silver, Gold and Platinum.</span>
+            Draw one thing everyday and upload to gain points. As you move forward in the levels, <span>you will gain badges like Bronze, Silver, Gold and Platinum.</span>
           </div>
         </div>
         <div className={cx(styles['right'])}>
