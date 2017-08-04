@@ -1,5 +1,5 @@
 const prodConfig = {
-  baseURL: 'http://localhost:1337',
+  baseURL: 'https://api.aotd.co',
   timeout: 2000,
   headers: {
     'Content-Type': 'application/json'
