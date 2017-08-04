@@ -32,7 +32,7 @@ class HomeFeedWidget extends Component {
 
     if(images.length === 0) {
       return <div className={cx(styles['outer'])} >
-        No art found
+        
       </div>
     }
     return <div className={cx(styles['outer'])}>
