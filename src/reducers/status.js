@@ -1,9 +1,10 @@
-import { AUTH } from '../actions/constants';
+import { AUTH, PROFILE } from '../actions/constants';
 import {LOADING, INIT} from '../utils/asyncStatusHelper';
 
 const status = (state = {
   signup: { asyncStatus: INIT },
   login: { asyncStatus: INIT },
+  artUpload: { asyncStatus: INIT },
 }, action) => {
   switch (action.type) {
     case AUTH.SIGNUP_REQUEST:
@@ -27,6 +28,16 @@ const status = (state = {
       return {
         ...state,
         login: {asyncStatus: INIT}
+      }
+    case PROFILE.ART_UPLOAD_REQUEST:
+      return {
+        ...state,
+        artUpload: {asyncStatus: LOADING}
+      }
+    case PROFILE.ART_UPLOAD_SUCCESS:
+      return {
+        ...state,
+        artUpload: {asyncStatus: INIT}
       }
     default:
       return state;

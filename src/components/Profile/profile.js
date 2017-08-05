@@ -11,7 +11,6 @@ import UserFeedWidget from '../UserFeedWidget';
 class Profile extends Component {
 
   componentDidMount () {
-console.log('mount');
     var username = this.props.match.params.username;
     if(username.substring(0, 1) === '@') {
       username = username.substring(1);
@@ -20,7 +19,6 @@ console.log('mount');
   }
 
   componentWillUpdate (nextProps) {
-    console.log('update');
     var username = nextProps.match.params.username;
     if(username.substring(0, 1) === '@') {
       username = username.substring(1);
@@ -28,13 +26,12 @@ console.log('mount');
       if(oldUsername !== username) {
         this.props.fetchProfile({username});
       }
-      console.log('old vs new : ', this.props.match.params.username + ' ' + username);
     }
   }
 
   render () {
 
-    const { profile, userState, match } = this.props;
+    const { profile, userState, match, status} = this.props;
     const { userDetails, score } = profile || {};
     const username = match.params.username.substring(1);
 
@@ -49,6 +46,7 @@ console.log('mount');
           userState={userState} 
           profile={profile} 
           username={username}
+          status={status.artUpload}
         />
       : null}
       <UserScoreWidget isLoggedIn={userDetails.isLoggedIn} score={score} />
@@ -61,6 +59,7 @@ const mapStateToProps = (state) => {
   return {
     profile: state.profile,
     userState: state.userState,
+    status: state.status,
   };
 };
 
