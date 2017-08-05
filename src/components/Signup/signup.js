@@ -40,6 +40,7 @@ class Signup extends Component {
   validate = () => {
     const {firstName, lastName, email, username} = this.state;
     var invalid = {};
+    var re = /^[a-zA-Z0-9_.-]*$/;
     if(firstName.length === 0) {
       invalid.firstName = 'First name is required';
     }
@@ -48,6 +49,9 @@ class Signup extends Component {
     }
     if(username.length === 0) {
       invalid.username = 'Username is required';
+    }
+    if(username.length > 0 && !re.test(username)) {
+      invalid.username = 'Username should be alphanumeric';
     }
     if(email.length === 0) {
       invalid.email = 'Email is required';
@@ -76,6 +80,7 @@ class Signup extends Component {
         <GenericInput 
           label='Username'
           placeholder='johnsnow123'
+          hint='Only letters and numbers are allowed'
           handleChange={(e) => this.changeState({ username:  e.target.value })}
           errorMessage={invalid.username}
         />
