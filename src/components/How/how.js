@@ -9,13 +9,16 @@ class How extends Component {
     return <div className={cx(styles['outer'])}>
       <div className={cx(styles['upper'])}>
         <h1>
-          How it works
+          What is #aotd ?
         </h1>
         <h2>
-          The aim is to help you develop a habit of drawing daily. 
+          <span>#aotd is your public art repository. A sketchbook, online.</span> 
         </h2>
         <h2>
-          This regular habit would build you into a better artist over time.
+          Draw and upload art daily, you'll improve as an artist and at the same time, create a gallery of your artwork.
+        </h2>
+        <h2>
+          A score has been added to track your progress. No pressure though ! 
         </h2>
       </div>
       <section>

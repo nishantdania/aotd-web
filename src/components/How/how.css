@@ -18,6 +18,10 @@
   color: #444;
 }
 
+.upper h2 span{
+  font-weight: 500;
+}
+
 .left {
   width: 50%;
 }
