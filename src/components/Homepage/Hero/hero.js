@@ -17,7 +17,7 @@ class Hero extends Component {
           Draw daily. Upload art. Improve as an artist
         </h2>
         <h2>
-          Join the community to form a habit of drawing.
+          Your sketchbook, online
         </h2>
       </div>
       <div>
