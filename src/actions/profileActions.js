@@ -23,7 +23,10 @@ export const fetchProfile = (data) => (dispatch) => {
 }
 
 export const uploadFile = (file) => (dispatch) => {
-  
+  dispatch({
+    type: PROFILE.ART_UPLOAD_REQUEST,
+  });
+
   var getPresignedUrl = () => {
     return ApiCaller.get(
       '/presignedUrl',
@@ -51,9 +54,6 @@ export const uploadFile = (file) => (dispatch) => {
     if(res.status !== 200) {
       reject();
     }
-    dispatch({
-      type: PROFILE.ART_UPLOAD_REQUEST,
-    });
     var parser = document.createElement('a');
     parser.href = res.config.url;
     var url = parser.pathname;
